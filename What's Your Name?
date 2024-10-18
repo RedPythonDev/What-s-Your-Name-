@@ -1,0 +1,31 @@
+import random #must import random first to have an rng
+print("What's your name?")
+name = input()
+wrong_name = random.randint(1, 5) #randint allows you to get a random int
+if wrong_name == 1:
+    wrong_name = ("Darnell")
+if wrong_name == 2:
+    wrong_name = ("Charlene")
+if wrong_name == 3:
+    wrong_name = ("Barry")
+if wrong_name == 4:
+    wrong_name = ("Ann")
+if wrong_name == 5:
+    wrong_name = ("Donny")
+print("Did you say", wrong_name + "?")
+yes_answers = ["yes", "yeah", "yup", "of course", "si"]
+no_answers = ["no", "nah", "nope", "wrong", "nada"]
+while True:
+    answer = input()
+    answer = answer.lower()
+    if any(x in answer for x in yes_answers):
+        print("Nice to meet you", wrong_name + "!")
+        break
+    if any(x in answer for x in no_answers):
+        print("Oh, what was your name again?")
+        name = input("Enter your name: ")
+        print("Ah, hello", name + ".")
+        break
+    else:
+        print("Can you repeat that for me? Did you say", wrong_name + "?")
+        continue
